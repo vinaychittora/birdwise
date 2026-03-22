@@ -1,7 +1,12 @@
-import Link from "next/link";
+import Link, { type LinkProps } from "next/link";
 import { ChevronRight } from "lucide-react";
 
-export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
+type BreadcrumbItem = {
+  label: string;
+  href?: LinkProps["href"];
+};
+
+export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   return (
     <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-foreground/60">
       {items.map((item, index) => (

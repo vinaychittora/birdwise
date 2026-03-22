@@ -1,6 +1,7 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
+import type { Route } from "next";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
-];
+] satisfies ReadonlyArray<{ href: Route; label: string }>;
 
 export function MobileMenu() {
   return (

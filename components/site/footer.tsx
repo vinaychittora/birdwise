@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/site/container";
 import { Logo } from "@/components/site/logo";
@@ -9,7 +10,7 @@ const quickLinks = [
   { href: "/field-reports", label: "Field reports" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
-];
+] satisfies ReadonlyArray<{ href: Route; label: string }>;
 
 export function Footer() {
   return (

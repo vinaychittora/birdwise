@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Clock3, UserRound } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,7 @@ import { formatDate } from "@/lib/utils";
 
 export function TourCard({ tour }: { tour: Tour }) {
   const nextDeparture = [...tour.departures].sort((a, b) => +new Date(a.date) - +new Date(b.date))[0];
+  const href = `/tours/${tour.slug}` as Route;
 
   return (
     <Card className="overflow-hidden">
@@ -23,7 +25,7 @@ export function TourCard({ tour }: { tour: Tour }) {
         </div>
         <div>
           <h3 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-            <Link href={`/tours/${tour.slug}`} className="hover:text-primary">
+            <Link href={href} className="hover:text-primary">
               {tour.title}
             </Link>
           </h3>
@@ -41,7 +43,7 @@ export function TourCard({ tour }: { tour: Tour }) {
         </div>
         <p className="text-sm leading-7 text-foreground/75">{tour.shortSummary}</p>
         <Button asChild>
-          <Link href={`/tours/${tour.slug}`}>
+          <Link href={href}>
             View journey <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

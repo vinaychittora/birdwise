@@ -127,7 +127,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
                   </div>
                 ))}
               </div>
-              <Button asChild className="w-full"><Link href="#inquiry">Ask about this departure</Link></Button>
+              <Button asChild className="w-full"><a href="#inquiry">Ask about this departure</a></Button>
             </Card>
 
             <Card className="space-y-5 p-6">

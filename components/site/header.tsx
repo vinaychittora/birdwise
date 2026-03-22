@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/site/container";
 import { Logo } from "@/components/site/logo";
@@ -11,7 +12,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
-];
+] satisfies ReadonlyArray<{ href: Route; label: string }>;
 
 export function Header() {
   return (

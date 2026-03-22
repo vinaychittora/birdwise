@@ -50,3 +50,8 @@ npm run typecheck
 - All contact details are dummy values provided for this demo.
 - Forms are UI-only and do not submit anywhere.
 - Placeholder imagery is implemented with styled panels so the project has no backend or asset dependency.
+## Deployment notes
+
+- **Vercel** is the easiest zero-config target for this repo’s current Next.js setup.
+- **Netlify** should also work with the standard Next.js build flow.
+- **Cloudflare** currently recommends using the OpenNext adapter on Workers for full Next.js apps rather than the deprecated `next-on-pages` flow.
