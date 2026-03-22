@@ -50,8 +50,15 @@ npm run typecheck
 - All contact details are dummy values provided for this demo.
 - Forms are UI-only and do not submit anywhere.
 - Placeholder imagery is implemented with styled panels so the project has no backend or asset dependency.
-## Deployment notes
 
-- **Vercel** is the easiest zero-config target for this repo’s current Next.js setup.
-- **Netlify** should also work with the standard Next.js build flow.
-- **Cloudflare** currently recommends using the OpenNext adapter on Workers for full Next.js apps rather than the deprecated `next-on-pages` flow.
+## Cloudflare Pages deployment
+
+This project is configured as a **static export** for easy deployment to Cloudflare Pages.
+
+Use these settings in Cloudflare Pages:
+
+- **Build command:** `npx next build`
+- **Build output directory:** `out`
+- **Root directory:** `/`
+
+Because all content is local and the dynamic routes use `generateStaticParams`, the site can be exported as static files during the Next.js build.
